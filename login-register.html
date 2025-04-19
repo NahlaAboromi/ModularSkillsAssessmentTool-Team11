@@ -6,11 +6,24 @@
   <title>Edu Map – Login/Register</title>
   <!-- Tailwind + custom variants -->
   <link href="style.css" rel="stylesheet" />
+  <!-- Font Awesome for Icons -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    rel="stylesheet"
+  />
 </head>
 <body class="bg-white dark:bg-black text-gray-900 dark:text-white">
   <div class="w-full min-h-screen flex flex-col gap-4 p-4 bg-slate-100 dark:bg-slate-800">
 
-    <!-- form card -->
+<!-- Header with Home Icon -->
+<header class="container mx-auto flex justify-between items-center">
+  <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Edu Map</h1>
+  <a href="index.html" class="py-2 px-3 bg-blue-600 hover:bg-blue-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded transition-colors">
+    <i class="fa-solid fa-house"></i> <!-- Home Icon -->
+  </a>
+</header>
+
+    <!-- Form Card -->
     <main class="container mx-auto flex-grow flex items-center justify-center">
       <div class="w-full max-w-md bg-white dark:bg-slate-700 text-gray-900 dark:text-white rounded-lg shadow-md p-8 space-y-8">
 
@@ -72,5 +85,13 @@
 
   </div>
   <script src="app-scripts.js" defer></script>
+  
+    <!-- footer styled like a card -->
+    <footer class="bg-slate-700 text-white py-4 px-6 mt-8 rounded shadow-md">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2025 Edu Map. All rights reserved.</p>
+      </div>
+    </footer>
 </body>
+
 </html>
