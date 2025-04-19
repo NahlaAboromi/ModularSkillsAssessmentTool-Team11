@@ -1,30 +1,427 @@
 {
-    "Advanced Calculus": [
-      {
-        "question": "What is the derivative of x^2?",
-        "options": ["2x", "x", "x^2", "2"],
-        "correctAnswer": "2x",
-        "explanation": "The derivative of x^2 is calculated using the power rule: d/dx[x^n] = n * x^(n-1). Here, n = 2, so the derivative is 2x."
-      },
-      {
-        "question": "What is the integral of 1/x?",
-        "options": ["ln(x)", "x^2", "1/x^2", "e^x"],
-        "correctAnswer": "ln(x)",
-        "explanation": "The integral of 1/x is ln(x) + C, where C is the constant of integration. This is a standard result in calculus."
-      }
+  "Advanced Calculus": [
+    {
+      "question": "What is the derivative of x²?",
+      "options": ["2x", "x", "x²", "2"],
+      "correctAnswer": "2x",
+      "explanation": "The derivative of x² is 2x, as per the power rule."
+    },
+    {
+      "question": "What is the integral of sin(x)?",
+      "options": ["cos(x)", "-cos(x)", "sin(x)", "-sin(x)"],
+      "correctAnswer": "-cos(x)",
+      "explanation": "The integral of sin(x) is -cos(x)."
+    },
+    {
+      "question": "What is the derivative of ln(x)?",
+      "options": ["1/x", "x", "eˣ", "0"],
+      "correctAnswer": "1/x",
+      "explanation": "The derivative of ln(x) is 1/x."
+    },
+    {
+      "question": "What is the integral of eˣ?",
+      "options": ["eˣ", "ln(x)", "x·eˣ", "eˣ + C"],
+      "correctAnswer": "eˣ + C",
+      "explanation": "The integral of eˣ is eˣ + C (where C is the constant of integration)."
+    },
+    {
+      "question": "What is the derivative of a constant (e.g., 5)?",
+      "options": ["0", "1", "5", "Undefined"],
+      "correctAnswer": "0",
+      "explanation": "The derivative of any constant is 0."
+    }
+  ],
+  "Classical Mechanics": [
+    {
+      "question": "What is Newton's Second Law?",
+      "options": ["F = ma", "F = mv", "F = mg", "F = mgh"],
+      "correctAnswer": "F = ma",
+      "explanation": "Newton's Second Law states that force equals mass times acceleration."
+    },
+    {
+      "question": "What is the unit of force?",
+      "options": ["Joule", "Newton", "Watt", "Pascal"],
+      "correctAnswer": "Newton",
+      "explanation": "The SI unit of force is the Newton (N)."
+    },
+    {
+      "question": "What is the formula for gravitational potential energy?",
+      "options": ["mgh", "½mv²", "Fd", "ma"],
+      "correctAnswer": "mgh",
+      "explanation": "Gravitational potential energy is given by mass × gravity × height (mgh)."
+    },
+    {
+      "question": "What is inertia?",
+      "options": [
+        "Resistance to change in motion",
+        "A type of energy",
+        "A force",
+        "A unit of measurement"
+      ],
+      "correctAnswer": "Resistance to change in motion",
+      "explanation": "Inertia is an object's resistance to changes in its state of motion."
+    },
+    {
+      "question": "What does the First Law of Thermodynamics state?",
+      "options": [
+        "Energy cannot be created or destroyed",
+        "Entropy always increases",
+        "F = ma",
+        "PV = nRT"
+      ],
+      "correctAnswer": "Energy cannot be created or destroyed",
+      "explanation": "The First Law is the conservation of energy."
+    }
+  ],
+  "Organic Chemistry": [
+    {
+      "question": "What is the functional group of alcohols?",
+      "options": ["-OH", "-COOH", "-NH₂", "-CHO"],
+      "correctAnswer": "-OH",
+      "explanation": "The functional group of alcohols is the hydroxyl group (-OH)."
+    },
+    {
+      "question": "What is the general formula for alkanes?",
+      "options": ["CₙH₂ₙ₊₂", "CₙH₂ₙ", "CₙH₂ₙ₋₂", "CₙHₙ"],
+      "correctAnswer": "CₙH₂ₙ₊₂",
+      "explanation": "The general formula for alkanes is CₙH₂ₙ₊₂."
+    },
+    {
+      "question": "What is a carbonyl group?",
+      "options": ["C=O", "C-OH", "C=C", "C≡N"],
+      "correctAnswer": "C=O",
+      "explanation": "A carbonyl group is a carbon double-bonded to oxygen (C=O)."
+    },
+    {
+      "question": "What is the IUPAC name for CH₄?",
+      "options": ["Methane", "Ethane", "Propane", "Butane"],
+      "correctAnswer": "Methane",
+      "explanation": "CH₄ is methane, the simplest alkane."
+    },
+    {
+      "question": "Which molecule is unsaturated?",
+      "options": ["Ethene (C₂H₄)", "Ethane (C₂H₆)", "Methane (CH₄)", "Propane (C₃H₈)"],
+      "correctAnswer": "Ethene (C₂H₄)",
+      "explanation": "Unsaturated hydrocarbons contain double/triple bonds (e.g., C=C in ethene)."
+    }
+  ],
+  "Introduction to Biology": [
+    {
+      "question": "What is the powerhouse of the cell?",
+      "options": ["Mitochondria", "Nucleus", "Ribosome", "Endoplasmic Reticulum"],
+      "correctAnswer": "Mitochondria",
+      "explanation": "Mitochondria produce ATP, the cell's energy currency."
+    },
+    {
+      "question": "What is the process by which plants make food?",
+      "options": ["Photosynthesis", "Respiration", "Fermentation", "Digestion"],
+      "correctAnswer": "Photosynthesis",
+      "explanation": "Photosynthesis converts sunlight into glucose."
+    },
+    {
+      "question": "What is the function of DNA?",
+      "options": [
+        "Stores genetic information",
+        "Produces energy",
+        "Builds cell walls",
+        "Transports oxygen"
+      ],
+      "correctAnswer": "Stores genetic information",
+      "explanation": "DNA encodes instructions for life."
+    },
+    {
+      "question": "Which organelle contains digestive enzymes?",
+      "options": ["Lysosome", "Golgi Apparatus", "Nucleus", "Chloroplast"],
+      "correctAnswer": "Lysosome",
+      "explanation": "Lysosomes break down waste using enzymes."
+    },
+    {
+      "question": "What is natural selection?",
+      "options": [
+        "Survival of the fittest",
+        "Random genetic changes",
+        "Human-controlled breeding",
+        "Extinction of species"
+      ],
+      "correctAnswer": "Survival of the fittest",
+      "explanation": "Traits enhancing survival/reproduction become more common."
+    }
+  ],
+  "Statistics": [
+    {
+      "question": "What is the mean of [2, 4, 6, 8]?",
+      "options": ["4", "5", "6", "7"],
+      "correctAnswer": "5",
+      "explanation": "Mean = (2+4+6+8)/4 = 5."
+    },
+    {
+      "question": "What is the mode of [1, 2, 2, 3, 4]?",
+      "options": ["1", "2", "3", "4"],
+      "correctAnswer": "2",
+      "explanation": "Mode is the most frequent value (2 appears twice)."
+    },
+    {
+      "question": "What does standard deviation measure?",
+      "options": [
+        "Spread of data",
+        "Central tendency",
+        "Sample size",
+        "Probability"
+      ],
+      "correctAnswer": "Spread of data",
+      "explanation": "Standard deviation quantifies data dispersion."
+    },
+    {
+      "question": "What is a p-value?",
+      "options": [
+        "Probability of observed data under null hypothesis",
+        "Effect size",
+        "Sample mean",
+        "Confidence interval"
+      ],
+      "correctAnswer": "Probability of observed data under null hypothesis",
+      "explanation": "p-value < 0.05 typically indicates statistical significance."
+    },
+    {
+      "question": "What is correlation?",
+      "options": [
+        "Measure of linear relationship",
+        "Cause-and-effect",
+        "Data clustering",
+        "Standard error"
+      ],
+      "correctAnswer": "Measure of linear relationship",
+      "explanation": "Correlation (r) ranges from -1 to 1."
+    }
+  ],
+  "Linear Algebra": [
+  {
+    "question": "What is the determinant of a 2x2 matrix [[a, b], [c, d]]?",
+    "options": ["ad - bc", "ab + cd", "a + d", "b - c"],
+    "correctAnswer": "ad - bc",
+    "explanation": "The determinant of a 2x2 matrix is calculated as (ad - bc)."
+  },
+  {
+    "question": "What is the rank of a matrix?",
+    "options": [
+      "Number of rows",
+      "Number of columns",
+      "Number of linearly independent rows",
+      "Sum of all elements"
     ],
-    "Linear Algebra": [
-      {
-        "question": "What is the determinant of a 2x2 matrix [[a, b], [c, d]]?",
-        "options": ["ad - bc", "ab + cd", "a + d", "b - c"],
-        "correctAnswer": "ad - bc",
-        "explanation": "The determinant of a 2x2 matrix [[a, b], [c, d]] is calculated as (a * d) - (b * c)."
-      },
-      {
-        "question": "What is the rank of a matrix?",
-        "options": ["Number of rows", "Number of columns", "Number of non-zero rows", "Number of zeros"],
-        "correctAnswer": "Number of non-zero rows",
-        "explanation": "The rank of a matrix is the maximum number of linearly independent rows (or columns). It is determined by counting the non-zero rows in its row echelon form."
-      }
-    ]
+    "correctAnswer": "Number of linearly independent rows",
+    "explanation": "Rank is the maximum number of linearly independent row/column vectors."
+  },
+  {
+    "question": "What is an eigenvector?",
+    "options": [
+      "A vector that changes only by a scalar factor when transformed",
+      "A vector perpendicular to all others",
+      "A vector with magnitude 1",
+      "A vector in the null space"
+    ],
+    "correctAnswer": "A vector that changes only by a scalar factor when transformed",
+    "explanation": "For a matrix A, an eigenvector v satisfies Av = λv (where λ is a scalar eigenvalue)."
+  },
+  {
+    "question": "What is the solution to the system: x + y = 3, 2x - y = 0?",
+    "options": ["(1, 2)", "(2, 1)", "(3, 0)", "(0, 3)"],
+    "correctAnswer": "(1, 2)",
+    "explanation": "Solving the system gives x = 1, y = 2."
+  },
+  {
+    "question": "What is the dot product of [1, 2] and [3, 4]?",
+    "options": ["11", "5", "10", "12"],
+    "correctAnswer": "11",
+    "explanation": "Dot product = (1*3) + (2*4) = 3 + 8 = 11."
   }
+],
+"Introduction to Psychology": [
+    {
+      "question": "What is the definition of classical conditioning?",
+      "options": [
+        "Learning through association of stimuli",
+        "Learning through reinforcement",
+        "Learning by observing others",
+        "Learning through reasoning"
+      ],
+      "correctAnswer": "Learning through association of stimuli",
+      "explanation": "Pavlov's dogs experiment demonstrated this (e.g., bell → salivation)."
+    },
+    {
+      "question": "Which part of the brain is responsible for memory formation?",
+      "options": ["Hippocampus", "Amygdala", "Cerebellum", "Frontal lobe"],
+      "correctAnswer": "Hippocampus",
+      "explanation": "The hippocampus consolidates short-term to long-term memory."
+    },
+    {
+      "question": "What is cognitive dissonance?",
+      "options": [
+        "Mental discomfort from conflicting beliefs/actions",
+        "A type of memory loss",
+        "A sleep disorder",
+        "A personality trait"
+      ],
+      "correctAnswer": "Mental discomfort from conflicting beliefs/actions",
+      "explanation": "Example: Smoking despite knowing it's harmful causes dissonance."
+    },
+    {
+      "question": "Who proposed the hierarchy of needs?",
+      "options": ["Maslow", "Freud", "Skinner", "Piaget"],
+      "correctAnswer": "Maslow",
+      "explanation": "Maslow's pyramid starts with physiological needs and ends with self-actualization."
+    },
+    {
+      "question": "What is the bystander effect?",
+      "options": [
+        "People are less likely to help in a crowd",
+        "People remember traumatic events better",
+        "People conform to group opinions",
+        "People perform worse when watched"
+      ],
+      "correctAnswer": "People are less likely to help in a crowd",
+      "explanation": "Diffusion of responsibility reduces individual action (e.g., Kitty Genovese case)."
+    }
+  ],
+  "World History": [
+    {
+      "question": "When did World War I begin?",
+      "options": ["1914", "1918", "1939", "1945"],
+      "correctAnswer": "1914",
+      "explanation": "Triggered by the assassination of Archduke Franz Ferdinand."
+    },
+    {
+      "question": "Which civilization built the pyramids of Giza?",
+      "options": ["Ancient Egyptians", "Mayans", "Romans", "Greeks"],
+      "correctAnswer": "Ancient Egyptians",
+      "explanation": "Built as tombs for pharaohs around 2600 BCE."
+    },
+    {
+      "question": "What was the Silk Road?",
+      "options": [
+        "A trade network connecting Asia and Europe",
+        "A Chinese military route",
+        "A Roman highway",
+        "A pilgrimage path"
+      ],
+      "correctAnswer": "A trade network connecting Asia and Europe",
+      "explanation": "Facilitated trade of silk, spices, and ideas (130 BCE–1453 CE)."
+    },
+    {
+      "question": "Who was the first president of the United States?",
+      "options": ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "John Adams"],
+      "correctAnswer": "George Washington",
+      "explanation": "Served from 1789–1797 after the American Revolution."
+    },
+    {
+      "question": "What caused the fall of the Roman Empire?",
+      "options": [
+        "Combination of invasions, corruption, and economic decline",
+        "A single decisive battle",
+        "A volcanic eruption",
+        "A pandemic alone"
+      ],
+      "correctAnswer": "Combination of invasions, corruption, and economic decline",
+      "explanation": "Multiple factors over centuries (e.g., barbarian invasions, inflation)."
+    }
+  ],
+  "Introduction to Computer Science": [
+    {
+      "question": "What does CPU stand for?",
+      "options": [
+        "Central Processing Unit",
+        "Computer Processing Unit",
+        "Central Program Unit",
+        "Control Processing Unit"
+      ],
+      "correctAnswer": "Central Processing Unit",
+      "explanation": "The CPU is the 'brain' of the computer that executes instructions."
+    },
+    {
+      "question": "Which language is primarily used for web development?",
+      "options": ["JavaScript", "Python", "Java", "C++"],
+      "correctAnswer": "JavaScript",
+      "explanation": "JavaScript is the standard language for interactive web pages."
+    },
+    {
+      "question": "What is the time complexity of binary search?",
+      "options": ["O(log n)", "O(n)", "O(n²)", "O(1)"],
+      "correctAnswer": "O(log n)",
+      "explanation": "Binary search halves the dataset with each comparison."
+    },
+    {
+      "question": "What does HTML stand for?",
+      "options": [
+        "HyperText Markup Language",
+        "High-Level Machine Language",
+        "Hyperlink Text Management Language",
+        "Home Tool Markup Language"
+      ],
+      "correctAnswer": "HyperText Markup Language",
+      "explanation": "HTML structures content on the web."
+    },
+    {
+      "question": "Which data structure uses FIFO (First-In-First-Out)?",
+      "options": ["Queue", "Stack", "Array", "Tree"],
+      "correctAnswer": "Queue",
+      "explanation": "Queues process elements in the order they arrive (like a line)."
+    }
+  ],
+  "Microeconomics": [
+    {
+      "question": "What is the law of supply?",
+      "options": [
+        "Price and quantity supplied are directly related",
+        "Price and quantity supplied are inversely related",
+        "Supply is always constant",
+        "Supply depends only on demand"
+      ],
+      "correctAnswer": "Price and quantity supplied are directly related",
+      "explanation": "Producers supply more at higher prices."
+    },
+    {
+      "question": "What is a monopoly?",
+      "options": [
+        "A single seller dominating a market",
+        "A market with many small sellers",
+        "A government-controlled market",
+        "A temporary market shortage"
+      ],
+      "correctAnswer": "A single seller dominating a market",
+      "explanation": "Monopolies have no competition (e.g., utilities)."
+    },
+    {
+      "question": "What is elasticity of demand?",
+      "options": [
+        "How quantity demanded responds to price changes",
+        "The total demand in a market",
+        "The fixed demand for necessities",
+        "A government price control"
+      ],
+      "correctAnswer": "How quantity demanded responds to price changes",
+      "explanation": "Elastic demand = sensitive to price (e.g., luxuries)."
+    },
+    {
+      "question": "What is a normal good?",
+      "options": [
+        "A good whose demand increases with income",
+        "A good with inelastic demand",
+        "A subsidized good",
+        "A good with fixed supply"
+      ],
+      "correctAnswer": "A good whose demand increases with income",
+      "explanation": "Examples include cars or electronics."
+    },
+    {
+      "question": "What does GDP stand for?",
+      "options": [
+        "Gross Domestic Product",
+        "General Demand Principle",
+        "Government Debt Percentage",
+        "Global Development Plan"
+      ],
+      "correctAnswer": "Gross Domestic Product",
+      "explanation": "GDP measures a country's total economic output."
+    }
+  ]
+}

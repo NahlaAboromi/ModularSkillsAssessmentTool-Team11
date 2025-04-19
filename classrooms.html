@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edu Map - Classrooms</title>
+  <!-- Tailwind + custom variants -->
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body class="bg-white dark:bg-black text-gray-900 dark:text-white">
+  <div class="w-full min-h-screen flex flex-col gap-4 p-4 bg-slate-100 dark:bg-slate-800">
+
+    <!-- Load the shared student header -->
+    <div id="student-header"></div>
+    <script>
+      fetch('student-header.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('student-header').innerHTML = html;
+        })
+        .catch(console.error);
+    </script>
+
+    <!-- Main Content Card -->
+    <main class="container mx-auto mt-8 p-6 bg-white dark:bg-slate-700 rounded-lg shadow-md max-w-4xl flex-grow">
+
+      <!-- Classroom List Section -->
+      <section id="classroom-list" class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Your Classrooms</h2>
+        <div id="classroom-cards" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Classroom cards will be dynamically generated here -->
+        </div>
+      </section>
+
+      <!-- Classroom Details Section -->
+      <section id="classroom-details" class="hidden">
+        <h2 id="classroom-title" class="text-2xl font-bold text-gray-900 dark:text-white mb-4"></h2>
+        <div id="classroom-content" class="space-y-6">
+          <!-- Announcements -->
+          <div id="announcements-section">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Announcements</h3>
+            <ul id="announcements-list" class="list-disc ml-6 space-y-2">
+              <!-- Announcements will be displayed here -->
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div id="resources-section">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Resources</h3>
+            <ul id="resources-list" class="list-disc ml-6 space-y-2">
+              <!-- Resources will be displayed here -->
+            </ul>
+          </div>
+
+          <!-- Discussions -->
+          <div id="discussions-section">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Discussions</h3>
+            <div id="discussion-posts" class="space-y-4">
+              <!-- Discussion posts will be displayed here -->
+            </div>
+            <form id="discussion-form" class="mt-4">
+              <textarea id="discussion-message" placeholder="Write a message..." class="w-full p-2 border rounded border-gray-300 dark:border-gray-600 dark:bg-slate-800 dark:text-white"></textarea>
+              <button type="submit" class="mt-2 w-full py-2 bg-blue-600 hover:bg-blue-500 text-white rounded transition-colors">
+                Post Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer Styled Like a Card -->
+    <footer class="bg-slate-700 text-white py-4 px-6 mt-8 rounded shadow-md">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2025 Edu Map. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Embedded JavaScript for Classrooms Page -->
+  <script>
+    // Initialize global variables
+    let students = { students: [] };
+    let classrooms = [];
+
+    // Fetch student data from JSON
+    fetch('student-data.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        students = data;
+        console.log("Student data loaded successfully:", students);
+      })
+      .catch(error => {
+        console.error("Error loading student data:", error);
+      });
+
+    // Fetch classroom data from JSON
+    fetch('classrooms-data.json')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        classrooms = data.classrooms;
+        console.log("Classroom data loaded successfully:", classrooms);
+        loadClassroomList();
+      })
+      .catch(error => {
+        console.error("Error loading classroom data:", error);
+      });
+
+    // Load classroom list for the logged-in user
+    function loadClassroomList() {
+      const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+      if (!loggedInUser) {
+        alert("You must log in first.");
+        window.location.href = "login-register.html";
+        return;
+      }
+
+      const classroomCardsContainer = document.getElementById("classroom-cards");
+      const userClassrooms = loggedInUser.classrooms;
+
+      if (userClassrooms.length === 0) {
+        classroomCardsContainer.innerHTML = `
+          <div class="col-span-full text-center p-4 bg-white dark:bg-slate-800 rounded-lg shadow-md">
+            <p>You are not enrolled in any classrooms yet.</p>
+          </div>
+        `;
+        return;
+      }
+
+      userClassrooms.forEach(classroomId => {
+        const classroom = classrooms.find(cls => cls.classroomId === classroomId);
+        if (classroom) {
+          classroomCardsContainer.innerHTML += `
+            <div class="p-4 bg-white dark:bg-slate-800 rounded-lg shadow-md cursor-pointer" onclick="loadClassroomDetails('${classroomId}')">
+              <h3 class="font-bold text-gray-900 dark:text-white">${classroom.className}</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Instructor: ${classroom.instructor}</p>
+            </div>
+          `;
+        }
+      });
+    }
+
+    // Load details for a specific classroom
+    function loadClassroomDetails(classroomId) {
+      const classroom = classrooms.find(cls => cls.classroomId === classroomId);
+      if (!classroom) {
+        alert("Classroom not found.");
+        return;
+      }
+
+      // Show classroom details section
+      document.getElementById("classroom-details").classList.remove("hidden");
+
+      // Update classroom title
+      document.getElementById("classroom-title").textContent = classroom.className;
+
+      // Load announcements
+      const announcementsList = document.getElementById("announcements-list");
+      announcementsList.innerHTML = "";
+      if (classroom.announcements.length === 0) {
+        announcementsList.innerHTML = "<li>No announcements yet.</li>";
+      } else {
+        classroom.announcements.forEach(announcement => {
+          announcementsList.innerHTML += `<li>${announcement.date}: ${announcement.message}</li>`;
+        });
+      }
+
+      // Load resources
+      const resourcesList = document.getElementById("resources-list");
+      resourcesList.innerHTML = "";
+      if (classroom.resources.length === 0) {
+        resourcesList.innerHTML = "<li>No resources available.</li>";
+      } else {
+        classroom.resources.forEach(resource => {
+          resourcesList.innerHTML += `
+            <li><a href="${resource.link}" target="_blank" class="text-blue-600 hover:underline">${resource.title}</a></li>
+          `;
+        });
+      }
+
+      // Load discussions
+      const discussionPosts = document.getElementById("discussion-posts");
+      discussionPosts.innerHTML = "";
+      if (classroom.discussions.length === 0) {
+        discussionPosts.innerHTML = `
+          <div class="p-4 bg-white dark:bg-slate-800 rounded-lg text-center">
+            <p>No discussions yet. Be the first to post!</p>
+          </div>
+        `;
+      } else {
+        classroom.discussions.forEach(post => {
+          discussionPosts.innerHTML += `
+            <div class="p-4 bg-white dark:bg-slate-800 rounded-lg">
+              <p><strong>${post.user}:</strong> ${post.message}</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">${new Date(post.timestamp).toLocaleString()}</p>
+            </div>
+          `;
+        });
+      }
+
+      // Handle discussion form submission
+      document.getElementById("discussion-form").onsubmit = function (e) {
+        e.preventDefault();
+        const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+        if (!loggedInUser) {
+          alert("You must log in first.");
+          window.location.href = "login-register.html";
+          return;
+        }
+        const message = document.getElementById("discussion-message").value.trim();
+        if (message) {
+          const newPost = {
+            user: loggedInUser.email,
+            message: message,
+            timestamp: new Date().toISOString()
+          };
+          classroom.discussions.push(newPost);
+          console.log("Updated discussions:", classroom.discussions);
+
+          // Reload discussions
+          loadClassroomDetails(classroomId);
+          document.getElementById("discussion-message").value = "";
+        } else {
+          alert("Message cannot be empty.");
+        }
+      };
+    }
+  </script>
+</body>
+</html>

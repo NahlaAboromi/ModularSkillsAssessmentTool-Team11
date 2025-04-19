@@ -1,0 +1,129 @@
+{
+  "classrooms": [
+    {
+      "classroomId": "MATH1453-Classroom",
+      "className": "Advanced Calculus Classroom",
+      "instructor": "Dr. Smith",
+      "students": ["john.doe@example.com", "alice.johnson@example.com"],
+      "announcements": [
+        {
+          "date": "2023-10-01",
+          "message": "Welcome to the Advanced Calculus Classroom! Please review the syllabus."
+        },
+        {
+          "date": "2023-10-05",
+          "message": "Quiz 1 results are now available."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Syllabus",
+          "link": "https://ocw.mit.edu/courses/mathematics/18-02sc-multivariable-calculus-fall-2010/syllabus/"
+        },
+        {
+          "title": "Lecture Notes - Week 1",
+          "link": "https://tutorial.math.lamar.edu/classes/calciii/calciii.aspx"
+        }
+      ],
+      "discussions": [
+        {
+          "user": "john.doe@example.com",
+          "message": "Does anyone know how to solve problem 3 from the homework?",
+          "timestamp": "2023-10-03T14:23:00Z"
+        },
+        {
+          "user": "alice.johnson@example.com",
+          "message": "Yes, you need to use the chain rule.",
+          "timestamp": "2023-10-03T15:45:00Z"
+        }
+      ]
+    },
+    {
+      "classroomId": "PHYS1001-Classroom",
+      "className": "Classical Mechanics Classroom",
+      "instructor": "Dr. Johnson",
+      "students": ["john.doe@example.com"],
+      "announcements": [
+        {
+          "date": "2023-09-28",
+          "message": "Lab sessions start next week. Please bring your lab manuals."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Syllabus",
+          "link": "https://ocw.mit.edu/courses/physics/8-01sc-classical-mechanics-fall-2016/syllabus/"
+        },
+        {
+          "title": "Lecture Notes - Week 1",
+          "link": "https://www.khanacademy.org/science/physics/one-dimensional-motion"
+        }
+      ],
+      "discussions": [
+        {
+          "user": "john.doe@example.com",
+          "message": "Can someone explain Newton's Third Law?",
+          "timestamp": "2023-10-01T10:15:00Z"
+        }
+      ]
+    },
+    {
+      "classroomId": "MATH1201-Classroom",
+      "className": "Linear Algebra Classroom",
+      "instructor": "Dr. Brown",
+      "students": ["mb@gmail.com"],
+      "announcements": [
+        {
+          "date": "2023-10-02",
+          "message": "Reminder: Assignment 1 is due this Friday."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Syllabus",
+          "link": "https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/syllabus/"
+        },
+        {
+          "title": "Lecture Notes - Week 1",
+          "link": "https://tutorial.math.lamar.edu/classes/linalg/linalg.aspx"
+        }
+      ],
+      "discussions": [
+        {
+          "user": "mb@gmail.com",
+          "message": "I'm confused about matrix multiplication. Can someone help?",
+          "timestamp": "2023-10-02T16:40:00Z"
+        }
+      ]
+    },
+    {
+      "classroomId": "MATH2301-Classroom",
+      "className": "Statistics Classroom",
+      "instructor": "Dr. Lee",
+      "students": ["mb@gmail.com"],
+      "announcements": [
+        {
+          "date": "2023-09-30",
+          "message": "Midterm exam will be held on October 15th."
+        }
+      ],
+      "resources": [
+        {
+          "title": "Syllabus",
+          "link": "https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/syllabus/"
+        },
+        {
+          "title": "Lecture Notes - Week 1",
+          "link": "https://www.statisticshowto.com/probability-and-statistics/"
+        }
+      ],
+      "discussions": [
+        {
+          "user": "mb@gmail.com",
+          "message": "What’s the difference between population and sample?",
+          "timestamp": "2023-10-04T09:20:00Z"
+        }
+      ]
+    }
+  ]
+}
