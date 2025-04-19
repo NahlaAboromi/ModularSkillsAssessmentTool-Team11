@@ -566,15 +566,27 @@ document.addEventListener('DOMContentLoaded', function () {
   function resetForm() {
     if (classForm) classForm.reset();
   
+    // Hide both exam sections
     if (manualExam) manualExam.classList.add("hidden");
+    if (autoExam) autoExam.classList.add("hidden");
   
+    // Reset radio buttons
     if (manualRadio) manualRadio.checked = false;
+    if (autoRadio) autoRadio.checked = false;
   
+    // Remove validation highlighting
     if (classCodeInput) classCodeInput.classList.remove("border-red-500", "bg-red-50", "dark:bg-red-900");
     if (classNameInput) classNameInput.classList.remove("border-red-500", "bg-red-50", "dark:bg-red-900");
-const autoPreview = document.getElementById("autoPreview");
-if (autoPreview) autoPreview.classList.add("hidden");
     if (subjectSelect) subjectSelect.classList.remove("border-red-500", "bg-red-50", "dark:bg-red-900");
+  
+    // Explicitly hide the autoPreview element
+    const autoPreview = document.getElementById("autoPreview");
+    if (autoPreview) {
+      autoPreview.classList.add("hidden");
+      // Also clear its content to ensure it's fully reset
+      autoPreview.innerHTML = '';
+    }
+  
     resetExamQuestions();
   }
   //Synchronizes the local questions array with the global manualExam object to ensure consistency.
